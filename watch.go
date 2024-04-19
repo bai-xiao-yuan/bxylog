@@ -1,9 +1,9 @@
 package bxylog
 
 import (
-	"bxylog/conf"
-	"bxylog/util"
 	"fmt"
+	"github.com/bai-xiao-yuan/bxylog/conf"
+	"github.com/bai-xiao-yuan/bxylog/util"
 	"io"
 	"log"
 	"os"

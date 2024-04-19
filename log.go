@@ -1,8 +1,8 @@
 package bxylog
 
 import (
-	"bxylog/conf"
 	"fmt"
+	"github.com/bai-xiao-yuan/bxylog/conf"
 	"runtime"
 	"sync"
 	"time"
