@@ -13,8 +13,8 @@ const (
 type OutTarget int8
 
 const (
-	Std  OutTarget = 1
-	File OutTarget = 2
+	Std  OutTarget = 0
+	File OutTarget = 1
 )
 
 type SliceType int8

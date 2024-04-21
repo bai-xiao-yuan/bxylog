@@ -110,6 +110,7 @@ func (l *Log) Panic(format string, v ...any) {
 	}
 	format = l.formatString(format, v...)
 	l.outPut(2, format, conf.LPanic)
+	panic(format)
 }
 
 func (l *Log) print(calldepth int, level conf.LogLevel, format string, v ...any) {
