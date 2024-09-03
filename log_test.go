@@ -1,9 +1,9 @@
 package bxylog
 
 import (
-	"github.com/bai-xiao-yuan/bxylog/conf"
-	"log"
 	"testing"
+
+	"github.com/bai-xiao-yuan/bxylog/conf"
 )
 
 func TestLog(t *testing.T) {
@@ -16,7 +16,7 @@ func TestLog(t *testing.T) {
 
 func TestLogger(t *testing.T) {
 	l := NewLog(&conf.Config{
-		Level:         conf.LDebug,
+		Level:         conf.LInfo,
 		OutTarget:     conf.File,
 		FileName:      "log/t1.log",
 		Color:         true,
@@ -25,8 +25,8 @@ func TestLogger(t *testing.T) {
 		FileSliceType: conf.FileSize,
 		SliceProp:     1024,
 	})
-	l.Info("测试等级Info")
-	l.Debug("测试等级Debug")
-	l.Panic("测试等级Panic")
-	log.Panicln()
+	for i := 0; i < 10000; i++ {
+		l.Info("测试等级Info")
+		l.Debug("测试等级Debug")
+	}
 }

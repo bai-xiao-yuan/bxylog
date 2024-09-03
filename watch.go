@@ -2,14 +2,15 @@ package bxylog
 
 import (
 	"fmt"
-	"github.com/bai-xiao-yuan/bxylog/conf"
-	"github.com/bai-xiao-yuan/bxylog/util"
 	"io"
 	"log"
 	"os"
 	"path/filepath"
 	"strings"
 	"time"
+
+	"github.com/bai-xiao-yuan/bxylog/conf"
+	"github.com/bai-xiao-yuan/bxylog/util"
 )
 
 const FileFix = "2006-01-02_15_04_05"
@@ -87,6 +88,8 @@ func (w *watch) newWriter() {
 
 func (w *watch) changeFile() {
 	w.Close()
+	w.l.mu.Lock()
+	defer w.l.mu.Unlock()
 	w.newFile()
 	w.l.out.ChangeFile(w.file)
 }
