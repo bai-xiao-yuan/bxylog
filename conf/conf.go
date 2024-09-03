@@ -3,8 +3,8 @@ package conf
 type LogLevel int8
 
 const (
-	LInfo  LogLevel = 1
-	LDebug LogLevel = 2
+	LDebug LogLevel = 1
+	LInfo  LogLevel = 2
 	LWarn  LogLevel = 3
 	LError LogLevel = 4
 	LPanic LogLevel = 5
